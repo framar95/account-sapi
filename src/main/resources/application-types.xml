@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="account-example" format="json">
+      <types:shape format="weave" example="examples/accounts-example.json"><![CDATA[%dw 2.0
+
+type account_example = Array<{|  id: Number {"typeId": "int"},   firstName: String,   lastName: String,   address: String,   postal: String,   country: String,   miles: Number {"typeId": "int"},   creationDate: String,   "type": String|}> {"example": "[{\\\"id\\\":1,\\\"firstName\\\":\\\"Pippo\\\",\\\"lastName\\\":\\\"Baudo\\\",\\\"address\\\":\\\"Via Salaria\\\",\\\"postal\\\":\\\"12345\\\",\\\"country\\\":\\\"Roma\\\",\\\"miles\\\":12,\\\"creationDate\\\":\\\"2016-02-28T16:41:41.090Z\\\",\\\"type\\\":\\\"personal\\\"},{\\\"id\\\":1,\\\"firstName\\\":\\\"Pippo\\\",\\\"lastName\\\":\\\"Baudo\\\",\\\"address\\\":\\\"Via Salaria\\\",\\\"postal\\\":12345,\\\"country\\\":\\\"Roma\\\",\\\"miles\\\":12,\\\"creationDate\\\":\\\"2016-02-28T16:41:41.090Z\\\",\\\"type\\\":\\\"personal\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="account-example-idOptional" format="json">
+      <types:shape format="weave" example="examples/accounts-example-idOptional.json"><![CDATA[%dw 2.0
+
+type account_example_idOptional = Array<{|  id: Number {"typeId": "int"},   firstName: String,   lastName: String,   address: String,   postal: Number {"typeId": "int"},   country: String,   miles: Number {"typeId": "int"},   "type": String|}> {"example": "[{\\\"id\\\":1,\\\"firstName\\\":\\\"Pippo\\\",\\\"lastName\\\":\\\"Baudo\\\",\\\"address\\\":\\\"Via Salaria\\\",\\\"postal\\\":12345,\\\"country\\\":\\\"Italia\\\",\\\"miles\\\":12},{\\\"id\\\":2,\\\"firstName\\\":\\\"Pippo\\\",\\\"lastName\\\":\\\"Baudo\\\",\\\"address\\\":\\\"Via Salaria\\\",\\\"postal\\\":12345,\\\"country\\\":\\\"Italia\\\",\\\"miles\\\":1,\\\"type\\\":\\\"personal\\\"}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#d2504ef6-1f07-4ba5-acf5-cf1b5a11d024">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="account-example-idOptional"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#58d11cc3-0644-4739-9a44-8c329496b7ca">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="account-example"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#aa1468eb-b91e-4323-abb3-03fde761fb1d">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="account-example"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

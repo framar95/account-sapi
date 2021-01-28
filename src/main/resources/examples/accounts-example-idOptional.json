@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "firstName": "Pippo",
+    "lastName": "Baudo",
+    "address": "Via Salaria",
+    "postal": 12345,
+    "country": "Italia",
+    "miles": 12
+  },
+  {
+    "id": 2,
+    "firstName": "Pippo",
+    "lastName": "Baudo",
+    "address": "Via Salaria",
+    "postal": 12345,
+    "country": "Italia",
+    "miles": 1,
+    "type": "personal"
+  }
+]

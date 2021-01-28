@@ -1,0 +1,24 @@
+[
+	{	
+		"id": 1,
+		"firstName": "Pippo",
+		"lastName": "Baudo",
+		"address": "Via Salaria",
+		"postal": "12345",
+		"country": "Roma",
+		"miles": 12,
+		"creationDate": "2016-02-28T16:41:41.090Z",
+		"type": "personal"
+	},
+	{
+		"id": 1,
+		"firstName": "Pippo",
+		"lastName": "Baudo",
+		"address": "Via Salaria",
+		"postal": 12345,
+		"country": "Roma",
+		"miles": 12,
+		"creationDate": "2016-02-28T16:41:41.090Z",
+		"type": "personal"
+	}
+]
